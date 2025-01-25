@@ -544,7 +544,7 @@ document
 });
 
 //SOUND TOGGLE
-const backgroundSound = new Audio("/audios/peaceful-piano-background-music-218762.mp3");
+const backgroundSound = new Audio(" audios/peaceful-piano-background-music-218762" );
 let soundOn = false;
 document
   .querySelector(".sound")
