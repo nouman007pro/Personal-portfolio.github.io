@@ -508,7 +508,7 @@ section {
   background-size: cover;
 }
 .softwarePro:nth-of-type(10) {
-  background: url("./icons/Redux.png") no-repeat;
+  background: url("/icons/Redux.png") no-repeat;
   background-size: cover;
 }
 .softwarePro:nth-of-type(11) {
