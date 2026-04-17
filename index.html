@@ -118,56 +118,258 @@
             </a>
         </section>
 
-        <section id="section3">
-            <div class="secPortTit content-anim-1">I have been working on some WEBs recently</div>
-            <div class="secPortDes content-anim-2">You wanna check them out?</div>
-            <div class="secPortFrame content-anim-3">
-                <button class="leftright" id="prevWebButton" aria-label="Previous Project"></button>
-                <button class="leftright" id="nextWebButton" aria-label="Next Project"></button>
-                <div class="wrapper" id="webWrapper">
-                    <div class="project web-project">
-                        <div class="projectTitle">RapidNews</div>
-                        <div class="projectImage">
-                            <img class="picture" src="/images/Screenshot 2025-03-02 062416.png" alt="RapidNews Project Screenshot">
-                        </div>
-                        <div class="projectSoftware">
-                            <img class="projectIcon" src="/icons/HTML.png" alt="HTML">
-                            <img class="projectIcon" src="/icons/CSS.png" alt="CSS">
-                            <img class="projectIcon" src="/icons/JavaScript.png" alt="JS">
-                            <img class="projectIcon" src="/icons/React.png" alt="React">
-                            <img class="projectIcon" src="/icons/icons8-redux-48.png" alt="Redux">
-                            <img class="projectIcon" src="/icons/Axios.png" alt="Axios">
-                            <img class="projectIcon" src="/icons/PostgreSQL.png" alt="PostgreSQL">
-                            <img class="projectIcon" src="/icons/Sequelize.png" alt="Sequelize">
-                        </div>
-                    </div>
-                    <div class="project web-project">
-                        <div class="projectTitle">Skyline-Turkey</div>
-                        <div class="projectImage">
-                            <img class="picture" src="/images/Screenshot 2025-03-02 062104.png" alt="Skyline Turkey Screenshot">
-                        </div>
-                        <div class="projectSoftware">
-                            <img class="projectIcon" src="/icons/HTML.png" alt="HTML">
-                            <img class="projectIcon" src="/icons/CSS.png" alt="CSS">
-                            <img class="projectIcon" src="/icons/JavaScript.png" alt="JS">
-                        </div>
-                    </div>
-                </div>
-                <div class="dotIndex">
-                    <div class="dot dotWeb"></div>
-                    <div class="dot dotWeb"></div>
-                    <div class="dot dotWeb"></div>
-                    <div class="dot dotWeb"></div>
-                    <div class="dot dotWeb"></div>
-                </div>
-            </div>
-            <a href="#section4" class="nextButton2 content-anim-4" aria-label="Next Section">
-                <span class="next"></span>
-                <span class="next"></span>
-                <span class="next"></span>
-            </a>
-        </section>
+       <section id="section3" class="py-24 overflow-hidden relative">
+    <!-- Background effects -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[150px]"></div>
+    </div>
 
+    <div class="container mx-auto px-4 mb-16">
+        <div class="text-center">
+            <span class="text-blue-500 text-sm font-semibold uppercase tracking-widest mb-4 block">
+                My Recent Work
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Web Projects <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Showcase</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Explore my latest web development projects in this immersive 3D carousel
+            </p>
+        </div>
+    </div>
+
+    <!-- Swiper Container -->
+    <div class="swiper-3d w-full py-12 max-w-7xl mx-auto">
+        <div class="swiper-wrapper" id="swiperWrapper">
+            <!-- Projects will be injected here via JavaScript -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Custom Styles -->
+    <style>
+        .swiper-3d {
+            padding: 3rem 0;
+        }
+        
+        .swiper-slide {
+            width: 320px !important;
+            max-width: 380px;
+        }
+        
+        .project-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #111;
+            transition: all 0.5s ease;
+            height: 520px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.12);
+        }
+        
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .project-card:hover .gradient-overlay {
+            opacity: 1;
+        }
+        
+        .project-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            color: white;
+        }
+        
+        .project-category {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #60a5fa;
+            margin-bottom: 8px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .visit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .visit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Swiper Custom Styling */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px !important;
+            height: 50px !important;
+            background: rgba(255,255,255,0.1) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+        
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 20px !important;
+            color: white;
+        }
+        
+        .swiper-pagination-bullet {
+            background: #666;
+            width: 10px;
+            height: 10px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #60a5fa;
+            width: 32px;
+            border-radius: 9999px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script>
+        // ================== YOUR PROJECTS DATA ==================
+        const projects = [
+            {
+                title: "RapidNews",
+                category: "Full Stack News Platform",
+                image: "/images/Screenshot 2025-03-02 062416.png",
+                link: "https://your-rapidnews-website-link.com"   // ← Change this to real live link
+            },
+            {
+                title: "Skyline-Turkey",
+                category: "Real Estate / Travel Website",
+                image: "/images/Screenshot 2025-03-02 062104.png",
+                link: "https://your-skyline-turkey-link.com"     // ← Change this to real live link
+            },
+            // Add more projects here ↓
+            /*
+            {
+                title: "Project Name 3",
+                category: "E-commerce / SaaS / Portfolio",
+                image: "/images/your-third-screenshot.png",
+                link: "https://live-link.com"
+            }
+            */
+        ];
+
+        // Generate slides
+        const wrapper = document.getElementById('swiperWrapper');
+        
+        projects.forEach(project => {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide';
+            slide.innerHTML = `
+                <div class="project-card group">
+                    <div class="project-image">
+                        <img src="${project.image}" alt="${project.title}">
+                        <div class="gradient-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">${project.category}</div>
+                        <h3 class="project-title">${project.title}</h3>
+                        <a href="${project.link}" target="_blank" class="visit-btn">
+                            Visit Live 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L9 15" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            `;
+            wrapper.appendChild(slide);
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-3d', {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            autoplay: {
+                delay: 2800,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 200,
+                modifier: 2.5,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+    </script>
+</section>
         <section id="section4">
             <div class="secPortTit content-anim-1">I made some GAMEs too</div>
             <div class="secPortDes content-anim-2">and I think they are amazing you may take a look :)</div>
